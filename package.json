@@ -1,0 +1,22 @@
+{
+  "name": "pubsub_beer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "webpack": "^4.28.4"
+  },
+  "devDependencies": {
+    "i": "^0.3.6",
+    "webpack-cli": "^3.2.1",
+    "wepback": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -w"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
