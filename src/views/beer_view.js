@@ -15,7 +15,7 @@ const BeerView = function () {
       beerDetail.appendChild(image);
 
     const name = document.createElement('h3');
-      name.textContent = `${beer.name}  (abv: ${beer.abv})`;
+      name.textContent = `${beer.name.toUpperCase()} (abv: ${beer.abv}%)`;
       beerDetail.appendChild(name);
 
     const tagline = document.createElement('h5');
@@ -24,7 +24,7 @@ const BeerView = function () {
 
 
 // sits inside/under name as an unordered list
-    const detailItem = document.createElement('p');
+    const detailItem = document.createElement('ul');
 
       const descriptionTitle = this.createTextDetail('Description:');
       detailItem.appendChild(descriptionTitle);
@@ -35,8 +35,21 @@ const BeerView = function () {
       const foodPairingTitle = this.createTextDetail('Good with:');
       detailItem.appendChild(foodPairingTitle);
 
-      const food_pairing = this.createDetailItem(beer.food_pairing);
-      detailItem.appendChild(food_pairing);
+      const foodPairing = this.createFoodDetailItem(beer.food_pairing.join(' - '));
+      console.log(foodPairing);
+      detailItem.appendChild(foodPairing);
+
+      // // TODO - try listing food pairings
+      // const foodDetail = document.createElement('ul');
+      // const foodPairing = this.createFoodDetailItem(beer.food_pairing);
+      //   beer.food_pairing.forEach((pairing) => {
+      //       foodItem = [];
+      //       console.log(foodPairing);
+      //       foodItem.pop(pairing);
+      //       return foodItem;
+      //   })
+      //   detailItem.appendChild(foodPairing);
+      //   // foodPairing.appendChild(foodDetail);
 
   beerDetail.appendChild(detailItem);
   return beerDetail;
@@ -44,16 +57,21 @@ const BeerView = function () {
 
 
   BeerView.prototype.createDetailItem = function (property) {
-    const element = document.createElement('ul');
+    const element = document.createElement('p');
     element.textContent = `${property}`;
     return element;
 };
 
-BeerView.prototype.createTextDetail = function (label) {
-  const element = document.createElement('h4');
-  element.textContent = `${label}`;
-  return element
-
+  BeerView.prototype.createTextDetail = function (label) {
+    const element = document.createElement('h4');
+    element.textContent = `${label}`;
+    return element
 };
+  //
+  BeerView.prototype.createFoodDetailItem = function (food) {
+    const element = document.createElement('p');
+    element.textContent = `${food.toLowerCase()}`;
+    return element
+  };
 
 module.exports = BeerView;

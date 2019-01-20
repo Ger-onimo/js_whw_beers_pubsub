@@ -13,9 +13,9 @@ Beers.prototype.getData = function () {
     this.beersData = data;
     PubSub.publish('Beers:beers-data-ready', this.beersData);
 })
-  // .catch((err) =>{
-  //   console.error(err);
-  // })
+  .catch((err) =>{
+    console.error(err);
+  })
 };
 
 module.exports = Beers;
