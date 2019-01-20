@@ -1,3 +1,5 @@
+// MY end code from Friday Code
+//////////////////////////////////////////////
 const PubSub = require('../helpers/pub_sub.js');
 const BeerView = require('./beer_view.js');
 
