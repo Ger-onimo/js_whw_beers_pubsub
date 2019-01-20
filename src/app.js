@@ -2,7 +2,7 @@ const Beers = require('./models/beers.js');
 const BeersListView = require('./views/beers_list_view.js')
 
 document.addEventListener('DOMContentLoaded', () => {
-  // console.log('JavaScript Loaded');
+  console.log('JavaScript Loaded');
 
   const listContainer = document.querySelector('#beer-list');
   const beersListView = new BeersListView(listContainer);

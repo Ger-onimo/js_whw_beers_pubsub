@@ -2,19 +2,25 @@
   "name": "pubsub_beer",
   "version": "1.0.0",
   "description": "",
-  "main": "webpack.config.js",
-  "dependencies": {},
-  "devDependencies": {
-    "i": "^0.3.6",
-    "webpack": "^4.28.4",
+  "main": "index.js",
+  "dependencies": {
     "webpack-cli": "^3.2.1",
-    "wepback": "^1.0.0"
+    "webpack": "^4.28.4"
   },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -w"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ger-onimo/js_whw_beers_pubsub.git"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ger-onimo/js_whw_beers_pubsub/issues"
+  },
+  "homepage": "https://github.com/Ger-onimo/js_whw_beers_pubsub#readme"
 }

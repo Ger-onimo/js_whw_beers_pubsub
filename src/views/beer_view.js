@@ -3,16 +3,26 @@ const BeerView = function () {
 };
 
   BeerView.prototype.createBeerDetail = function (beer) {
+    // sits inside the html beer-list ul
     const beerDetail = document.createElement('div');
     beerDetail.classList.add('beer-detail');
 
-  const name = document.createElement('h3');
-  name.textContent = beer.name;
-  beerDetail.appendChild(name);
+    const name = document.createElement('h3');
+    name.textContent = beer.name;
+    beerDetail.appendChild(name);
 
-  const detailItem = document.createElement('ul');
-    const description = this.createDetailItem('Description', beer.description);
-    detailItem.appendChild(description);
+    const detailItem = document.createElement('ul');
+      const description = this.createDetailItem('Description', beer.description);
+      detailItem.appendChild(description);
+
+      const abv = this.createDetailItem('abv', beer.abv);
+      detailItem.appendChild(abv);
+
+      const image = document.createElement('img');
+      image.src = beer.image_url
+      image.height = 200;
+      detailItem.appendChild(image);
+
 
   beerDetail.appendChild(detailItem);
   return beerDetail;

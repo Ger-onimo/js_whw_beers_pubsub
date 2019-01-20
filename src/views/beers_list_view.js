@@ -3,23 +3,22 @@ const PubSub = require('../helpers/pub_sub.js');
 const BeerView = require('./beer_view.js');
 
 const BeersListView = function (container) {
-  debugger
   this.container = container;
-  // this.beers = null;
 };
 
 BeersListView.prototype.bindEvents = function () {
   PubSub.subscribe('Beers:beers-data-ready', (event) => {
-    this.beers = event.detail;
-    // console.log(event);
-    this.renderBeerViews();
+    console.log(event);
+    this.renderBeerViews(event.detail);
   });
 };
 
+
 BeersListView.prototype.renderBeerViews = function (beers) {
+// debugger
   beers.forEach((beer) => {
-    const beerItem = this.createBeerListItem(beer);
-    this.container.appendChild(beerItem);
+  const beerItem = this.createBeerListItem(beer);
+  this.container.appendChild(beerItem);
   });
 };
 
@@ -30,7 +29,7 @@ BeersListView.prototype.createBeerListItem = function (beer) {
 
 };
 
-
+module.exports = BeersListView;
 
 
 // MY end code from Friday Code
