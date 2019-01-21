@@ -4,14 +4,13 @@ const BeerView = function () {
 
   BeerView.prototype.createBeerDetail = function (beer) {
 // sits inside/under the html beer-list ul
-
     const beerDetail = document.createElement('section');
     beerDetail.classList.add('beer-detail');
 
 // sits inside/under the html beer-detail section
     const image = document.createElement('img');
       image.src = beer.image_url
-      image.height = 100;
+      image.height = 120;
       beerDetail.appendChild(image);
 
     const name = document.createElement('h3');
@@ -19,9 +18,8 @@ const BeerView = function () {
       beerDetail.appendChild(name);
 
     const tagline = document.createElement('h5');
-      tagline.textContent = `${beer.tagline}`;
+      tagline.textContent = `${beer.tagline}...`;
       beerDetail.appendChild(tagline);
-
 
 // sits inside/under name as an unordered list
     const detailItem = document.createElement('ul');
@@ -58,20 +56,21 @@ const BeerView = function () {
 
   BeerView.prototype.createDetailItem = function (property) {
     const element = document.createElement('p');
-    element.textContent = `${property}`;
+    element.textContent = property;
     return element;
 };
 
   BeerView.prototype.createTextDetail = function (label) {
     const element = document.createElement('h4');
-    element.textContent = `${label}`;
+    element.textContent = label;
     return element
 };
   //
   BeerView.prototype.createFoodDetailItem = function (food) {
     const element = document.createElement('p');
-    element.textContent = `${food.toLowerCase()}`;
+    element.textContent = `- ${food.toLowerCase()} -`;
     return element
   };
+
 
 module.exports = BeerView;

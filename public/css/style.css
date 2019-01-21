@@ -1,7 +1,6 @@
 body {
   background-color: white;
   font-family: calibri, sans-serif;
-
 }
 
 h5 {
@@ -10,7 +9,11 @@ h5 {
 
 .beer-detail {
   margin: auto;
-  width: 75%;
+  width: 65%;
   border: 3px solid gray;
   padding: 35px;
+}
+
+img {
+
 }
